@@ -1,0 +1,19 @@
+﻿		<div class = "toppanel">
+			<div class="toppanel-center"> 
+				<div class="logo"></div>
+				<div class="userpanel" ng-show = "university.isUserExists()" ng-click = "university.quit()"> Выход </div>
+				<div class="userpanel" ng-show = "university.isUserExists()" ng-click = "header.selectTab('createevent')"> Создать ивент </div>
+				<div class="userpanel" ng-show = "!university.isUserExists()" ng-click = "header.selectTab('signup')"> Регистрация </div>
+				<div class="userpanel" ng-show = "!university.isUserExists()" ng-click = "header.selectTab('signin')"> Вход </div>
+				
+				<div class = "closesign" ng-show = "header.isTab('signup') || header.isTab('signin')" ng-click = "header.cleanTab()"> </div>
+				<div class = "closeeventform" ng-show = "header.isTab('createevent')" ng-click = "header.cleanTab()"> </div>				
+				
+				<add-event></add-event>
+				
+				<sign-in></sign-in>
+				
+				<sign-up></sugn-up>
+			
+			</div>
+		</div>

@@ -1,0 +1,27 @@
+﻿
+			<div class = "closetab" ng-show = "!panel.isTab('main')" ng-click = "panel.cleanTab()"> </div> 
+			<div class = "event" ng-show = "panel.isTab('main')" ng-click = "panel.selectTab($index)" ng-repeat = "event in university.events">
+				<img class = "eventimg" ng-src="{{event.image}}" />
+				<div class = "eventprogress">
+					<progress max = {{event.cost}} value = {{event.currentAmount}}>
+					</progress>
+				</div>
+				<div class="eventitem"> 
+					<div class="eventname"> {{event.name}} </div>
+					<div class="money"> {{event.currentAmount | currency : "UAH"}} / {{event.cost | currency : "UAH"}}</div>
+				</div>
+				<div class="event-information">
+					{{event.description | limitTo: 160}}
+				</div>
+				<div class="eventbottominfo">
+					<div class="commentblock">
+						<div class="like-logo"> </div> 
+						<h5> {{event.likes}} </h5>
+					</div>
+					<div class="commentblock">
+						<div class="comment-logo"> </div> 
+						<h5> {{event.reviews.length}} </h5>
+					</div>
+				</div>
+			</div>
+			

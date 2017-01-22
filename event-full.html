@@ -1,0 +1,87 @@
+﻿			<div class = "eventfull" ng-show = "!panel.isTab('main')">
+				<img class = "eventfullimg" ng-src="{{university.events[panel.tab].image}}" />
+				<div class = "eventfullname"> {{university.events[panel.tab].name}} </div>
+				
+				<div class = "progressfull">
+					<progress max = {{university.events[panel.tab].cost}} value = {{university.events[panel.tab].currentAmount}}>
+					</progress>
+				</div>
+				
+				<div class = "eventfulldescription"> {{university.events[panel.tab].description}} </div>
+				
+				<div class = "eventfullpoints">
+					
+					<div class = "fullpoints">
+					<div id = "universitylogo"> </div>
+					<h4>{{university.events[panel.tab].university}}</h4>
+					</div>
+					
+					<div class = "fullpoints">
+					<div id = "userlogo"> </div>
+					<h4>{{university.events[panel.tab].user}}</h4>
+					</div>
+					
+					<div class = "fullpoints">
+					<div id = "cashlogo"> </div>
+					<h4>{{university.events[panel.tab].currentAmount | currency : "UAH"}} / {{university.events[panel.tab].cost | currency : "UAH"}}</h4> 
+					</div>
+					
+					<div class = "fullpoints">
+					<div id = "startdatelogo"> </div>
+					<h4>{{university.events[panel.tab].startDate | date}}</h4> 
+					</div>
+					
+					<div class = "fullpoints">
+					<div id = "enddatelogo"> </div>
+					<h4>{{university.events[panel.tab].endDate | date}}</h4> 
+					</div>
+					
+					<div class = "fullpoints">
+					<div id = "likelogo"> </div>
+					<h4>{{university.events[panel.tab].likes}}</h4> 
+					</div>
+					
+				</div>
+				
+				<div class = "donatebutton" ng-click = "panel.showDonateForm(university.cookie.id)"> DONATE </div>
+				
+				<div class = "closedonate" ng-show = "panel.isDonateForm('short') || panel.isDonateForm('full')" ng-click = "panel.closeDonateForm()"> </div>
+				
+				<form class = "donateformfull" ng-show = "panel.donateType('short')" 
+				ng-submit = "panel.addDonate(university.cookie.id, university.events[panel.tab]); panel.closeDonateForm()" novalidate>
+				<div class="signintextlabel"> DONATE </div>
+				<input type = "number" ng-model = "panel.donate.amount" placeholder = "Введите сумму..." required>
+				<input type = "submit" value = "DONATE">
+				</form>
+				
+				<form class = "donateformfull" ng-show = "panel.donateType('full')" 
+				ng-submit = "panel.addDonate(university.cookie.id, university.events[panel.tab]); panel.closeDonateForm()" novalidate>
+				<div class="signintextlabel"> DONATE </div>
+				<input type = "text" ng-model = "panel.donate.cardNumber" placeholder = "Введите номер карты..." required>
+				<input type = "month" ng-model = "panel.donate.cardMonth" placeholder = "01" required>
+				<input type = "password" ng-model = "panel.donate.cardCVV" placeholder = "CVV" maxlength="3" required>
+				<div id = "cvv"></div>
+				<input type = "number" ng-model = "panel.donate.amount" placeholder = "Введите сумму..." required>
+				<input type = "submit" value = "DONATE">
+				</form>
+				
+				<div class = "commentsblock">
+					<p> Комментарии </p>
+					<form class = "addreviewform" ng-show = "university.isUserExists()" 
+					ng-submit = "panel.addReview(university.events[panel.tab].reviews, university.cookie.id)" novalidate>
+					<input type = "text" ng-model="panel.review.description" placeholder = "Введите комментарий..." required>
+					<input type = "submit" value = "Добавить комментарий">
+					</form>
+					<div class = "reviews" ng-repeat = "review in university.events[panel.tab].reviews | orderBy:'date':true">
+					<img ng-src="{{university.users[review.user].photo}}" class="commentuserpic"/>
+						<div class="commentnamedate">
+							<div class="commentname"> {{university.users[review.user].name}} {{university.users[review.user].surname}} </div>
+							<div class="commentdate"> {{review.date | date:'HH:mm - dd.MM.yyyy'}} </div>
+						</div>
+						
+						<div class="commenttext">
+							{{review.description}}
+						</div>
+					</div>
+				</div>
+			</div>

@@ -1,0 +1,11 @@
+﻿				<form class="addeventform" ng-show = "header.isTab('createevent')" 
+				ng-submit="university.createEvent(university.events, university.users); header.cleanTab()" novalidate>
+				<div class="signintextlabel"> New Event </div>
+				<input type="text" ng-model="university.event.name" placeholder="Введите название вашего обьявления..." required>
+				<input type="date" ng-model="university.event.startDate" placeholder="Введите начальную дату..." required>
+				<input type="date" ng-model="university.event.endDate" placeholder="Введите конечную дату..." required>
+				<input type="text" ng-model="university.event.cost" placeholder="Введите стоимость..." required>
+				<input type="text" ng-model="university.event.description" placeholder="Опишите суть обьявления..."required>
+				<input type="file" id = "eventImage" value="Загрузите фото">
+				<input type="submit" value="Добавить обьявление">
+				</form>

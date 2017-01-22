@@ -1,0 +1,10 @@
+﻿				<form class="signupform" ng-show = "header.isTab('signup')"	ng-submit="university.addUser(university.users); header.cleanTab()" novalidate>
+				<div class="signintextlabel"> SIGN-UP </div>
+				<input type="text" ng-model="university.user.card" placeholder="Введите номер карты..." required>
+				<input type="text" ng-model="university.user.name" placeholder="Введите имя..." required>
+				<input type="text" ng-model="university.user.surname" placeholder="Введите фамилию..." required>
+				<input type="email" ng-model="university.user.email" placeholder="Введите email..." required>
+				<input type="password" ng-model="university.user.password" placeholder="Введите пароль..." required>
+				<input type="file" ng-model="university.user.photo" value="Загрузите фото">
+				<input type="submit" value="Войти">
+				</form>

@@ -1,0 +1,42 @@
+﻿[
+	{
+	"id" : 0,
+	"name" : "admin",
+	"surname" : "admin",
+	"email" : "admin@gmail.com",
+	"university" : "НТУУ «КПИ» им. Сикорского",
+	"photo" : "images/user1.jpg",
+	"card" : "0000000000000000",
+	"password" : "admin"
+	},
+	{
+	"id" : 1,
+	"name" : "Алексей",
+	"surname" : "Рудюк",
+	"email" : "rudyuk.alexey@gmail.com",
+	"university" : "НТУУ «КПИ» им. Сикорского",
+	"photo" : "images/user1.jpg",
+	"card" : "0343223465229983",
+	"password" : "avam-1995"
+	},
+	{
+	"id" : 2,
+	"name" : "Анатолий",
+	"surname" : "Сторцев",
+	"email" : "stortsev@gmail.com",
+	"university" : "НТУУ «КПИ» им. Сикорского",
+	"photo" : "images/user2.jpg",
+	"card" : "1234432132412341",
+	"password" : "stortsev78"
+	},
+	{
+	"id" : 3,
+	"name" : "Криштиану",
+	"surname" : "Роналду",
+	"email" : "a@i.ua",
+	"university" : "НТУУ «КПИ» им. Сикорского",
+	"photo" : "images/user4.jpg",
+	"card" : "1234432132412341",
+	"password" : "a"
+	}
+]
